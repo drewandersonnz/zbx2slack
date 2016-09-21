@@ -188,6 +188,10 @@ class noticeInfo(object):
             'text': self.text,
             'attachments': [
                 {
+                    'title': self.trigger_url,
+                    'title_link': self.trigger_url,
+                },
+                {
                     'color': self.attachment_color,
                     'fields': self.attachment_fields,
                     'title': self.trigger_name,
