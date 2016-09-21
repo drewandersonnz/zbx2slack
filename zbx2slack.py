@@ -150,7 +150,7 @@ class noticeInfo(object):
         generate and return attchment fields for each items.
         ref. https://api.slack.com/docs/attachments#fields
         '''
-        _fileds = []
+        _fields = []
 
         for _item in self.items:
 
@@ -158,12 +158,12 @@ class noticeInfo(object):
                     self.zabbix_server_url,
                     **_item)
 
-            _fileds.append({
+            _fields.append({
                     'title': '{hostname} - {name}'.format(**_item),
                     'value': ':mag_right: {key} | *{value}* [<{0}|Graph>]'.format(_item_graph_url, **_item)
                     })
 
-        return _fileds
+        return _fields
 
 
     def _gen_payload(self):
