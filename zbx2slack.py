@@ -46,11 +46,12 @@ class noticeInfo(object):
         self.trigger_name      = args.trigger_name
         self.trigger_status    = args.trigger_status
         self.trigger_severity  = args.trigger_severity
+        self.trigger_url       = args.trigger_url
         self.event_id          = args.event_id
         self._item_text_list   = args.item
         self.items             = self._gen_items()
 
-        self.trigger_url       = self._gen_trigger_url()
+        self.trigger_url_gen   = self._gen_trigger_url()
         self.attachment_color  = self._gen_attachment_color()
         self.text              = self._gen_text()
         self.pretext           = self._gen_pretext()
@@ -64,7 +65,6 @@ class noticeInfo(object):
 
          ex.
             http://zabbix.example.com/zabbix/tr_events.php?triggerid=00000&eventid=00
-
         '''
         _trigger_url = '{0}/tr_events.php?triggerid={1}&eventid={2}'.format(
                 self.zabbix_server_url,
@@ -185,17 +185,19 @@ class noticeInfo(object):
 
         _payload = json.dumps({
             'username': self.slack_botname,
-            'attachments': [{
-                'color': self.attachment_color,
-                'fields': self.attachment_fields,
-                'title': self.trigger_name,
-                'title_link': self.trigger_url,
-                'pretext': self.pretext,
-                'mrkdwn_in': [
-                    'title', 'pretext', 'fields'
-                ],
-            }]
             'text': self.text,
+            'attachments': [
+                {
+                    'color': self.attachment_color,
+                    'fields': self.attachment_fields,
+                    'title': self.trigger_name,
+                    'title_link': self.trigger_url_gen,
+                    #'pretext': self.pretext,
+                    'mrkdwn_in': [
+                        'title', 'pretext', 'fields'
+                    ],
+                },
+            ]
         })
 
         if isinstance(_payload, str):
