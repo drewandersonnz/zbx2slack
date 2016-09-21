@@ -255,6 +255,7 @@ def main():
             --trigger-name "{TRIGGER.NAME}" \
             --trigger-status "{TRIGGER.STATUS}" \
             --trigger-severity "{TRIGGER.SEVERITY}" \
+            --trigger-url "{TRIGGER.URL}" \
             --event-id "{EVENT.ID}" \
             --item "{HOST.NAME1}|{ITEM.NAME1}|{ITEM.KEY1}|{ITEM.VALUE1}|{ITEM.ID1}" \
             --item "{HOST.NAME2}|{ITEM.NAME2}|{ITEM.KEY2}|{ITEM.VALUE2}|{ITEM.ID2}" \
