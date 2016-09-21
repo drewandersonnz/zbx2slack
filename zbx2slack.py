@@ -8,7 +8,7 @@ zbx2slack-alert-notify.py
 
 Zabbix Alert Notification Script for Slack. by pure python.
 
-`more read <https://github.com/laughk/zbx2slack/blob/master/README.rst>`_ 
+`more read <https://github.com/laughk/zbx2slack/blob/master/README.rst>`_
 
 LICENSE
 ------------------------
@@ -79,8 +79,8 @@ class noticeInfo(object):
         from:
 
         [
-          '{HOST.NAME1}|{ITEM.NAME1}|{ITEM.KEY1}|{ITEM.VALUE1}|{ITEM.ID1}', 
-          '{HOST.NAME2}|{ITEM.NAME2}|{ITEM.KEY2}|{ITEM.VALUE2}|{ITEM.ID2}', 
+          '{HOST.NAME1}|{ITEM.NAME1}|{ITEM.KEY1}|{ITEM.VALUE1}|{ITEM.ID1}',
+          '{HOST.NAME2}|{ITEM.NAME2}|{ITEM.KEY2}|{ITEM.VALUE2}|{ITEM.ID2}',
         ]
 
         to:
