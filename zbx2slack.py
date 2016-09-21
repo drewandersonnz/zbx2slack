@@ -59,7 +59,7 @@ class noticeInfo(object):
 
     def _gen_trigger_url(self):
         '''
-         generate and return url of Alert Tigger infomation.
+         generate and return url of Alert Trigger infomation.
 
          ex.
             http://zabbix.example.com/zabbix/tr_events.php?triggerid=00000&eventid=00
