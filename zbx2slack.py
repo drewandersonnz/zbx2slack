@@ -275,6 +275,8 @@ def main():
             type=str, help='Set Zabbix Macro "{TRIGGER.STATUS}"' )
     parser.add_argument('--trigger-severity',
             type=str, help='Set Zabbix Macro "{TRIGGER.SEVERITY}"')
+    parser.add_argument('--trigger-url',
+            type=str, help='Set Zabbix Macro "{TRIGGER.URL}"')
     parser.add_argument('--event-id',
             type=int, help='Set Zabbix Macro "{EVENT.ID}"')
     parser.add_argument('--item', action='append',
