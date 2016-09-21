@@ -171,7 +171,7 @@ class noticeInfo(object):
 
             _fields.append({
                     'title': '{hostname} - {name}'.format(**_item),
-                    'value': ':mag_right: {key} | *{value}* [<{0}|Graph>]'.format(_item_graph_url, **_item)
+                    'value': ' [<{0}|Graph>] {key} = *{value}*'.format(_item_graph_url, **_item)
                     })
 
         return _fields
@@ -188,10 +188,6 @@ class noticeInfo(object):
             'text': self.text,
             'attachments': [
                 {
-                    'title': self.trigger_url,
-                    'title_link': self.trigger_url,
-                },
-                {
                     'color': self.attachment_color,
                     'fields': self.attachment_fields,
                     'title': self.trigger_name,
@@ -200,6 +196,10 @@ class noticeInfo(object):
                     'mrkdwn_in': [
                         'title', 'pretext', 'fields'
                     ],
+                },
+                {
+                    'title': self.trigger_url,
+                    'title_link': self.trigger_url,
                 },
             ]
         })
