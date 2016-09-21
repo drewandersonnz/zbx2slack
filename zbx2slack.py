@@ -52,6 +52,7 @@ class noticeInfo(object):
 
         self.trigger_url       = self._gen_trigger_url()
         self.attachment_color  = self._gen_attachment_color()
+        self.text              = self._gen_text()
         self.pretext           = self._gen_pretext()
         self.attachment_fields = self._gen_attachment_fields()
 
@@ -120,6 +121,16 @@ class noticeInfo(object):
         return _items
 
 
+    def _gen_text(self):
+        '''
+        generate and return string for alert pretext, by the state.
+        '''
+        return "[{trigger_status}] [{trigger_severity}] {trigger_name}".format(**{
+            "trigger_severity": self.trigger_severity,
+            "trigger_status": self.trigger_status,
+            "trigger_name": self.trigger_name,
+        })
+
     def _gen_pretext(self):
         '''
         generate and return string for alert pretext, by the state.
@@ -184,6 +195,7 @@ class noticeInfo(object):
                     'title', 'pretext', 'fields'
                 ],
             }]
+            'text': self.text,
         })
 
         if isinstance(_payload, str):
