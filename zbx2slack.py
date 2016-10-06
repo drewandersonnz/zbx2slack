@@ -181,7 +181,7 @@ class NoticeInfo(object):
 
             _fields.append({
                 'title': '{hostname} - {name}'.format(**_item),
-                'value': '[<{0}|Graph>] {key} = *{value}*''.format(
+                'value': '[<{0}|Graph>] {key} = *{value}*'.format(
                     _item_graph_url, **_item)
                 })
 
